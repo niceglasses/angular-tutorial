@@ -50,8 +50,8 @@
 	<script>
 
 		var demoApp = angular.module('demoApp', []);
- 		
- 		function SimpleController($scope) {
+
+		demoApp.controller('SimpleController', function($scope) {
 			$scope.friends = [
 				{name:'John', phone:'555-1212', age:10},
 				{name:'Mary', phone:'555-9876', age:19},
@@ -59,9 +59,7 @@
 				{name:'Adam', phone:'555-5678', age:35},
 				{name:'Julie', phone:'555-8765', age:29}
      	];
-		}
-
-		demoApp.controller('SimpleController', SimpleController);
+		});
 
 	</script>
 	
