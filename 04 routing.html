@@ -16,37 +16,16 @@
 		cursor: pointer; cursor: hand;
 	}
 
+	input {
+		margin-bottom: 8px;
+	}	
+
 
 
 	</style>
 </head>
 <body>
-<div data-ng-controller="SearchController">
-<p>
-	<h2>Controllers, directives and modules</h2>
-</p>
-
-<p>
-	<label for="searchName">Search: </label>
-	<input type="search" id="searchName" name="searchName" data-ng-model="searchName">
-</p>
-<p>
-	Showing results for: <strong><em>{{ searchName }}</em></strong>
-</p>
-<p>
-	<table>
-		<tr>
-			<th>Name</th>
-			<th>Phone</th>
-			<th>Age</th>
-		</tr>
-		<tr data-ng-repeat="person in people | orderBy:'name' | filter:searchName">
-			<td>{{ person.name }}</td>
-			<td>{{ person.phone }}</td>
-			<td>{{ person.age }}</td>
-		</tr>
-	</table>
-</p>
+<div data-ng-view>
 
 </div>
 
@@ -65,8 +44,8 @@ demoApp.config(function ($routeProvider) {
 		{
 			controller: 'SearchController',
 			templateUrl: 'Partials/View1.html'
-		}),
-		.when('/partial2',
+		})
+		.when('/view2',
 		{
 			controller: 'SearchController',
 			templateUrl: 'Partials/View2.html'
@@ -83,6 +62,14 @@ var SearchController = function($scope) {
 		{name:'Adam', phone:'555-5678', age:35},
 		{name:'Julie', phone:'555-8765', age:29}
 	];
+
+	$scope.addNewPerson = function() {
+		$scope.people.push({
+			name: $scope.newPerson.name,
+			phone: $scope.newPerson.name,
+			age: $scope.newPerson.name
+		});
+	}
 };
 demoApp.controller('SearchController', SearchController);
 

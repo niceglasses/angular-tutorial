@@ -1,0 +1,25 @@
+<div>
+<h3>View 2</h3>
+<p>
+	<label for="searchName">Search Name: </label>
+	<input type="search" id="searchName" name="searchName" data-ng-model="number">
+</p>
+<p>
+	Showing results for number: <strong><em>{{ searchName }}</em></strong>
+</p>
+<p>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Age</th>
+		</tr>
+		<tr data-ng-repeat="person in people | filter:number">
+			<td>{{ person.name }}</td>
+			<td>{{ person.phone }}</td>
+			<td>{{ person.age }}</td>
+		</tr>
+	</table>
+</p>
+
+</div>

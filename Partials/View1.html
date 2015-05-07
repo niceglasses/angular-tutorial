@@ -1,4 +1,5 @@
 <div>
+<h3>View 1</h3>
 <p>
 	<label for="searchName">Search Name: </label>
 	<input type="search" id="searchName" name="searchName" data-ng-model="filter.name">
@@ -20,5 +21,30 @@
 		</tr>
 	</table>
 </p>
+
+
+<h4> Nothing found? Add a new person</h4>
+<p>
+	<label for="newName">Name: </label>
+	<input type="text" id="newName" name="newName" data-ng-model="newPerson.name">
+	<br>
+	<label for="newPhone">Phone: </label>
+	<input type="text" id="newPhone" name="newPhone" data-ng-model="newPerson.phone">
+	<br>
+	<label for="newAge">Age: </label>
+	<input type="text" id="newAge" name="newAge" data-ng-model="newPerson.age">
+	<br>
+</p>
+
+<p>
+	<button ng-click="addNewPerson()">Add new person</button>
+</p>
+
+
+<p>
+	<a href="#/view2">View 2</a>
+</p>
+
+ 
 
 </div>
