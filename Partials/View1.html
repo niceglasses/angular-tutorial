@@ -1,50 +1,51 @@
-<div>
-<h3>View 1</h3>
+<h1>Learning Routing 1</h1>
 <p>
-	<label for="searchName">Search Name: </label>
-	<input type="search" id="searchName" name="searchName" data-ng-model="filter.name">
+	Search for: <input type="text" data-ng-model="searchName">
+	<br>
+	
+
+	Showing results for: {{ searchName }}
 </p>
+
 <p>
-	Showing results for: <strong><em>{{ searchName }}</em></strong>
-</p>
-<p>
+	<h3>Score Board</h3>
 	<table>
 		<tr>
-			<th>Name</th>
-			<th>Phone</th>
-			<th>Age</th>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>Score</td>
 		</tr>
-		<tr data-ng-repeat="person in people | filter:filer.name">
-			<td>{{ person.name }}</td>
-			<td>{{ person.phone }}</td>
-			<td>{{ person.age }}</td>
+		<tr data-ng-repeat="person in people | filter:searchName | orderBy:Score ">
+			<td>{{person['First Name']}}</td>
+			<td>{{person['Last Name']}}</td>
+			<td>{{person['Score']}}</td>
 		</tr>
 	</table>
 </p>
 
-
-<h4> Nothing found? Add a new person</h4>
 <p>
-	<label for="newName">Name: </label>
-	<input type="text" id="newName" name="newName" data-ng-model="newPerson.name">
-	<br>
-	<label for="newPhone">Phone: </label>
-	<input type="text" id="newPhone" name="newPhone" data-ng-model="newPerson.phone">
-	<br>
-	<label for="newAge">Age: </label>
-	<input type="text" id="newAge" name="newAge" data-ng-model="newPerson.age">
-	<br>
+	<h2>Add new player and Score</h2>
+
+
+
+	<ul>
+		<li>
+			<label for="newFirstName">First Name: </label>
+			<input type="text" data-ng-model='newPerson.firstname'>
+		</li>
+		<li>
+			<label for="newLastName">Last Name: </label>
+			<input type="text" data-ng-model='newPerson.lastname'>
+		</li>
+		<li>
+			<label for="Score">Score: </label>
+			<input type="text" data-ng-model='newPerson.score'>
+		</li>
+	</ul>
+
+	<button data-ng-click='addPerson()'>Click here to add new player/score</button>
 </p>
 
 <p>
-	<button ng-click="addNewPerson()">Add new person</button>
+	<a href="#/view2">Go to Leader Board</a>
 </p>
-
-
-<p>
-	<a href="#/view2">View 2</a>
-</p>
-
- 
-
-</div>

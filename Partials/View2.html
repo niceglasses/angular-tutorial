@@ -1,25 +1,25 @@
-<div>
-<h3>View 2</h3>
-<p>
-	<label for="searchName">Search Name: </label>
-	<input type="search" id="searchName" name="searchName" data-ng-model="number">
-</p>
-<p>
-	Showing results for number: <strong><em>{{ searchName }}</em></strong>
-</p>
-<p>
-	<table>
-		<tr>
-			<th>Name</th>
-			<th>Phone</th>
-			<th>Age</th>
-		</tr>
-		<tr data-ng-repeat="person in people | filter:number">
-			<td>{{ person.name }}</td>
-			<td>{{ person.phone }}</td>
-			<td>{{ person.age }}</td>
-		</tr>
-	</table>
-</p>
+<h1>Learning Routing View 2</h1>
+	<p>
+		Search for: <input type="text" data-ng-model="searchName">{{ searchName }}
+	</p>
 
-</div>
+	<p>
+		<h3>Leader Board</h3>
+		<table>
+			<tr>
+				
+				<th>Last Name</th>
+				<th>Score</th>
+			</tr>
+			<tr data-ng-repeat="person in people | orderBy:Score">
+				
+				<td>{{person['Last Name']}}</td>
+				<td>{{person['Score']}}</td>
+			</tr>
+		</table>
+	</p>
+
+
+<p>
+	<a href="#/">Go  to players</a>
+</p>
