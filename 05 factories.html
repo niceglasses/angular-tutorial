@@ -85,19 +85,6 @@ demoApp.config(function ($routeProvider) {
 		});
 });
 
-
-// demoApp.factory('simpleFactory', function() {
-// 	this.people = [{"First Name":"Jill","Last Name":"Smith","Score":"disqualified"},{"First Name":"Eve","Last Name":"Jackson","Score":"94"},{"First Name":"John","Last Name":"Doe","Score":"80"},{"First Name":"Adam","Last Name":"Johnson","Score":"67"}];
-
-// 	return this.people;
-
-	
-
-// 	factory.getPeople = function() {
-// 		return people;
-// 	};
-// });
-
 demoApp.factory('simpleFactory',function(){
 	return function getPeople(){
 		this.people = [{"First Name":"Jill","Last Name":"Smith","Score":"disqualified"},{"First Name":"Eve","Last Name":"Jackson","Score":"94"},{"First Name":"John","Last Name":"Doe","Score":"80"},{"First Name":"Adam","Last Name":"Johnson","Score":"67"}];
@@ -105,33 +92,6 @@ demoApp.factory('simpleFactory',function(){
 		return this.people;
 	};
 });
-
-
-
-// demoApp.factory('simpleFactory', function(){
-// 	var factory = {};
-
-// 	var people = [
-// 	{"First Name":"Jill","Last Name":"Smith","Score":"disqualified"},{"First Name":"Eve","Last Name":"Jackson","Score":"94"},{"First Name":"John","Last Name":"Doe","Score":"80"},{"First Name":"Adam","Last Name":"Johnson","Score":"67"}
-// 	];	
-
-// 	factory.getPeople = function () {
-// 		return people;
-// 	};
-// });
-
-// demo.factory('simpleFactory', function() {
-// 	var people = [
-// 	{"First Name":"Jill","Last Name":"Smith","Score":"disqualified"},{"First Name":"Eve","Last Name":"Jackson","Score":"94"},{"First Name":"John","Last Name":"Doe","Score":"80"},{"First Name":"Adam","Last Name":"Johnson","Score":"67"}
-// 	];
-
-// 	var factory = {}
-
-// 	factory.getPeople = function () {
-// 		return people;
-// 	};
-// });
-
 
 demoApp.controller('SearchController', function ($scope, simpleFactory) {
 	$scope.people = [{"First Name":"Jill","Last Name":"Smith","Score":"disqualified"},{"First Name":"Eve","Last Name":"Jackson","Score":"94"},{"First Name":"John","Last Name":"Doe","Score":"80"},{"First Name":"Adam","Last Name":"Johnson","Score":"67"}];
@@ -144,7 +104,6 @@ demoApp.controller('SearchController', function ($scope, simpleFactory) {
 		});
 	};
 });
-
 
 
 </script>	
